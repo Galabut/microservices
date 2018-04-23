@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
-@FeignClient(name = "TableClient")
+@FeignClient(name = "Table")
 public interface TableClient {
 
     @GetMapping("/tables/free")

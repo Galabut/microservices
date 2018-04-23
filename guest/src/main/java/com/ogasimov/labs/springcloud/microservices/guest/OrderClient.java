@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "OrderClient")
+@FeignClient(name = "Order")
 public interface OrderClient {
 
     @PostMapping("/order/{tableId}")

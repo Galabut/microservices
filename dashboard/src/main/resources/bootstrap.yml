@@ -4,3 +4,12 @@ spring:
 
 server:
   port: 8000
+
+eureka:
+  client:
+    register-with-eureka: false
+
+turbine:
+  aggregator:
+    clusterConfig: BILL,ORDER,TABLE,GUEST,STOCK
+  appConfig: Bill,Order,Table,Guest,Stock

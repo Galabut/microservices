@@ -1,5 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.bill;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -16,6 +18,7 @@ public class BillController {
     @Autowired
     private BillService billService;
 
+    @HystrixCommand(fallbackMethod = "createBillFallback")
     @PostMapping("/bill/{tableId}/{orderId}")
     public void createBill(@PathVariable Integer tableId, @PathVariable Integer orderId) {
         billService.createBill(tableId, orderId);
