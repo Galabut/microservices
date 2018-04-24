@@ -42,6 +42,7 @@
     </dependencyManagement>
 
     <modules>
+        <module>config</module>
         <module>guest</module>
         <module>table</module>
         <module>order</module>
@@ -51,6 +52,6 @@
         <module>dashboard</module>
         <module>turbine</module>
         <module>apigw</module>
-        <module>config</module>
+        <module>zipkin</module>
     </modules>
 </project>

@@ -30,7 +30,7 @@ public class BillController {
         billService.payBills(tableId);
     }
 
-    @GetMapping
+    @GetMapping("/bills")
     public String getBills() {
         return "BILLS";
     }

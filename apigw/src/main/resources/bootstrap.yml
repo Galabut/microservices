@@ -20,3 +20,6 @@ zuul:
     clients:
       serviceId: Table
       path: /tables
+    bills:
+      serviceId: Bill
+      path: /bill
