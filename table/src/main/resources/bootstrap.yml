@@ -6,6 +6,10 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    config:
+     uri: http://localhost:9000/
+
   jpa:
     properties:
       hibernate:
@@ -23,3 +27,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8760/eureka/
+
+config.text: table
+
+management:
+  security:
+    enabled: false

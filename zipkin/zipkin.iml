@@ -4,6 +4,15 @@
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <webroots />
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -69,28 +78,22 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:javax-websocket-client-impl:9.4.6.v20170531" level="project" />
     <orderEntry type="library" name="Maven: javax.websocket:javax.websocket-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jasper:apache-el:8.0.33" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-server:1.28.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-server:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.5.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:1.5.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin:1.28.0" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-autoconfigure-ui:1.28.0" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-ui:1.28.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.zipkin2:zipkin:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin:2.2.1" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-autoconfigure-ui:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-ui:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.5.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-config:1.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter:1.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-context:1.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:4.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:1.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-rsa:1.0.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.55" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.55" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-config-client:1.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-zipkin-stream:1.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-zipkin-stream:1.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:1.5.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.10" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-core:1.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-core:1.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:1.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:4.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-stream:1.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-sleuth-stream:1.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream:1.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-validation:1.5.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.5.20" level="project" />
@@ -108,8 +111,8 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-heroku-connector:1.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-localconfig-connector:1.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-autoconfigure-storage-mysql:1.28.0" level="project" />
-    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-storage-mysql:1.28.0" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-autoconfigure-storage-mysql:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.zipkin.java:zipkin-storage-mysql:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.jooq:jooq:3.9.5" level="project" />
     <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.5.9" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.5.1" level="project" />
