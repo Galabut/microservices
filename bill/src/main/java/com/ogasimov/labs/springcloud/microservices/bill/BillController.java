@@ -7,6 +7,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +29,10 @@ public class BillController {
     public void payBills(@PathVariable Integer tableId) {
         billService.payBills(tableId);
     }
+
+    @GetMapping
+    public String getBills() {
+        return "BILLS";
+    }
+
 }
