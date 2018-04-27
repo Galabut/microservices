@@ -2,7 +2,9 @@ package com.ogasimov.labs.springcloud.microservices.event;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.ogasimov.labs.springcloud.microservices.common.AbstractCommand;
+import com.ogasimov.labs.springcloud.microservices.common.AbstractTableCommand;
 import com.ogasimov.labs.springcloud.microservices.common.EventDto;
+import com.ogasimov.labs.springcloud.microservices.common.OccupyTableCommand;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -28,9 +30,9 @@ public class EventController {
         return new ArrayList<>();
     }
 
-    @HystrixCommand(fallbackMethod = "sendEventFallback")
+//    @HystrixCommand(fallbackMethod = "sendEventFallback")
     @PostMapping("/events/send")
-    public Boolean sendEvent(@RequestBody AbstractCommand cmd) throws Exception {
+    public Boolean sendEvent(@RequestBody AbstractTableCommand cmd) throws Exception {
         System.out.println("EventController received cmd");
         return eventService.persistEvent(cmd);
     }

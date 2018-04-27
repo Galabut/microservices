@@ -27,7 +27,7 @@ public class EventService {
         Event event = new Event();
         ObjectMapper objectMapper = new ObjectMapper();
         event.setPayload(objectMapper.writeValueAsString(cmd));
-//        event.setType(payload.getClass().getName());
+        event.setType(cmd.getClass().getName());
         eventRepository.save(event);
         return true;
     }

@@ -19,6 +19,9 @@ public class CreateBillCommand extends AbstractBillCommand {
         this.orderId = orderId;
     }
 
+    public CreateBillCommand() {
+    }
+
     public Integer getOrderId() {
         return orderId;
     }

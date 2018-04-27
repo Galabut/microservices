@@ -15,6 +15,10 @@ public abstract class AbstractBillCommand extends AbstractCommand {
         this.tableId = tableId;
     }
 
+
+    public AbstractBillCommand() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

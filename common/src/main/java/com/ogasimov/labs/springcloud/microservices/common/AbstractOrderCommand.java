@@ -12,22 +12,14 @@ import org.codehaus.jackson.annotate.JsonTypeInfo;
     @JsonSubTypes.Type(value = CreateOrderCommand.class, name = "createOrderCommand"),
 })
 public abstract class AbstractOrderCommand extends AbstractCommand {
-    private Integer tableId;
-    @JsonTypeInfo(
-        use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.PROPERTY,
-        property = "type")
-    @JsonSubTypes({
-        @JsonSubTypes.Type(value = AbstractTableCommand.class, name = "occupyTableCommand"),
-        @JsonSubTypes.Type(value = AbstractOrderCommand.class, name = "createOrderCommand"),
-        @JsonSubTypes.Type(value = AbstractStockCommand.class, name = "minusStockCommand"),
-        @JsonSubTypes.Type(value = AbstractBillCommand.class, name = "payBillCommand"),
-    })
-    public abstract class AbstractCommand {
 
-    }
+    private Integer tableId;
+
     public AbstractOrderCommand(Integer tableId) {
         this.tableId = tableId;
+    }
+
+    public AbstractOrderCommand() {
     }
 
     public Integer getTableId() {
@@ -40,8 +32,12 @@ public abstract class AbstractOrderCommand extends AbstractCommand {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         AbstractOrderCommand that = (AbstractOrderCommand) o;
 
@@ -56,7 +52,7 @@ public abstract class AbstractOrderCommand extends AbstractCommand {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "{" +
-                "tableId=" + tableId +
-                '}';
+               "tableId=" + tableId +
+               '}';
     }
 }

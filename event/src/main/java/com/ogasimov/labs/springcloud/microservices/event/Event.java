@@ -13,7 +13,7 @@ public class Event {
     private Integer id;
 
     private String payload;
-//    private String type;
+    private String type;
 
     public Integer getId() {
         return id;
@@ -51,11 +51,19 @@ public class Event {
         return true;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (payload != null ? payload.hashCode() : 0);
-//        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 
@@ -64,7 +72,7 @@ public class Event {
         return "Event{" +
                "id=" + id +
                ", payload='" + payload + '\'' +
-//                ", type='" + type + '\'' +
+                ", type='" + type + '\'' +
                '}';
     }
 }

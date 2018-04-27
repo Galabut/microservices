@@ -26,6 +26,10 @@ public abstract class AbstractStockCommand extends AbstractCommand {
         this.menuItems = menuItems;
     }
 
+
+    public AbstractStockCommand() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

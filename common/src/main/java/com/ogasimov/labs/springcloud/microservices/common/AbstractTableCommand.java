@@ -4,9 +4,9 @@ import org.codehaus.jackson.annotate.JsonSubTypes;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 @JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type")
+    use = JsonTypeInfo.Id.CLASS,
+    include = JsonTypeInfo.As.WRAPPER_OBJECT,
+    property = "class")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = OccupyTableCommand.class, name = "occupyTableCommand"),
 })
@@ -24,6 +24,9 @@ public abstract class AbstractTableCommand extends AbstractCommand {
 
     public void setTableId(Integer tableId) {
         this.tableId = tableId;
+    }
+
+    public AbstractTableCommand() {
     }
 
     @Override

@@ -12,6 +12,9 @@ public class CreateOrderCommand extends AbstractOrderCommand {
         this.menuItems = menuItems;
     }
 
+    public CreateOrderCommand() {
+    }
+
     public List<Integer> getMenuItems() {
         return menuItems;
     }
