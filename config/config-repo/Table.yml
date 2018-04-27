@@ -1,0 +1,12 @@
+server:
+  port: 9990
+
+config.text: table_from_config_repo_112121212
+
+#POST- http://localhost:9990/refresh
+
+#add in Client
+#management:
+#  security:
+#    enabled: false
+#works only with git files and after commit
