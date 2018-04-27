@@ -6,10 +6,4 @@ spring:
   application:
     name: Zipkin
 
-rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-
 #zipkin will show any data on UI only if to trigger any API of service

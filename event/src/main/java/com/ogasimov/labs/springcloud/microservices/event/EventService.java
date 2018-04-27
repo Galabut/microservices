@@ -1,26 +1,61 @@
 package com.ogasimov.labs.springcloud.microservices.event;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.transaction.Transactional;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ogasimov.labs.springcloud.microservices.common.AbstractCommand;
+import com.ogasimov.labs.springcloud.microservices.common.CreateOrderCommand;
+import com.ogasimov.labs.springcloud.microservices.common.OccupyTableCommand;
+import com.ogasimov.labs.springcloud.microservices.common.PayBillCommand;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ogasimov.labs.springcloud.microservices.common.EventDto;
+import java.io.IOException;
+
+import javax.transaction.Transactional;
 
 @Service
 @Transactional
 public class EventService {
-    public void persistEvent(Object payload) throws Exception {
+
+
+    @Autowired
+    EventRepository eventRepository;
+
+    ObjectMapper mapper = new ObjectMapper();
+
+    public boolean persistEvent(AbstractCommand cmd) throws Exception {
         Event event = new Event();
-        event.setPayload(objectMapper.writeValueAsString(payload));
-        event.setType(payload.getClass().getName());
+        ObjectMapper objectMapper = new ObjectMapper();
+        event.setPayload(objectMapper.writeValueAsString(cmd));
+//        event.setType(payload.getClass().getName());
         eventRepository.save(event);
+        return true;
     }
+
+    public void replayEvents() {
+        eventRepository.findAll().stream().map(event -> {
+            try {
+                sendEvent(mapper.readValue(event.getPayload(), AbstractCommand.class));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
+    }
+
+    private void sendEvent(AbstractCommand event) {
+        if (event instanceof OccupyTableCommand) {
+            System.out.println((OccupyTableCommand) event);
+        }
+        if (event instanceof PayBillCommand) {
+            System.out.println((PayBillCommand) event);
+        }
+
+        if (event instanceof CreateOrderCommand) {
+            System.out.println((CreateOrderCommand) event);
+        } else {
+            System.out.println("Received unknown event");
+        }
+    }
+
 }

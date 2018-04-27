@@ -42,11 +42,17 @@ public class TableController {
 
     @PutMapping("/table/{id}/occupy")
     public void occupyTable(@PathVariable Integer id) {
+        tableService.updateTable(id, false);
     }
 
     @GetMapping("/getConfig")
     public String getConfigValue() {
         return configValue;
+    }
+
+    @GetMapping("/tables/allFree")
+    public void freeAllTables() {
+        tableService.setAllTablesToFree();
     }
 
     public List<Integer> getTablesFallback(Throwable th) {

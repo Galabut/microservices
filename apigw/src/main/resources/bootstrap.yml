@@ -17,6 +17,15 @@ eureka:
 zuul:
   ignoredServices: '*'
   routes:
-    clients:
+    tables:
       serviceId: Table
-      path: /tables
+      path: /tables/**
+      strip-prefix: false
+    dinner:
+      serviceId: Dinner
+      path: /dinner/**
+      strip-prefix: false
+    events:
+      serviceId: Event
+      path: /events/**
+      strip-prefix: false

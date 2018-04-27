@@ -10,6 +10,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: bill,stock
+
 
 server:
   port: 8085

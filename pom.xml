@@ -33,11 +33,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>6.0.6</version>
             </dependency>
-            <dependency>
-                <groupId>com.ogasimov.labs.springcloud.microservices</groupId>
-                <artifactId>common</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -52,5 +47,6 @@
         <module>turbine</module>
         <module>apigw</module>
         <module>config</module>
+        <module>event</module>
     </modules>
 </project>

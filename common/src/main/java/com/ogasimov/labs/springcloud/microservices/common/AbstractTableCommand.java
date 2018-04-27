@@ -1,6 +1,17 @@
 package com.ogasimov.labs.springcloud.microservices.common;
 
-public abstract class AbstractTableCommand {
+import org.codehaus.jackson.annotate.JsonSubTypes;
+import org.codehaus.jackson.annotate.JsonTypeInfo;
+
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY,
+    property = "type")
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = OccupyTableCommand.class, name = "occupyTableCommand"),
+})
+public abstract class AbstractTableCommand extends AbstractCommand {
+
     private Integer tableId;
 
     public AbstractTableCommand(Integer tableId) {
@@ -17,8 +28,12 @@ public abstract class AbstractTableCommand {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         AbstractTableCommand that = (AbstractTableCommand) o;
 
@@ -33,7 +48,7 @@ public abstract class AbstractTableCommand {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "{" +
-                "tableId=" + tableId +
-                '}';
+               "tableId=" + tableId +
+               '}';
     }
 }
