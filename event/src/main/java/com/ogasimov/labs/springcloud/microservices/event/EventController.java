@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,8 +32,8 @@ public class EventController {
     }
 
 //    @HystrixCommand(fallbackMethod = "sendEventFallback")
-    @PostMapping("/events/send")
-    public Boolean sendEvent(@RequestBody AbstractTableCommand cmd) throws Exception {
+    @PostMapping(value = "/events/send")
+    public Boolean sendEvent(@RequestBody AbstractCommand cmd) throws Exception {
         System.out.println("EventController received cmd");
         return eventService.persistEvent(cmd);
     }

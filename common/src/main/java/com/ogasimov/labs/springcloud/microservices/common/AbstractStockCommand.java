@@ -1,16 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.common;
 
-import org.codehaus.jackson.annotate.JsonSubTypes;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
-
 import java.util.List;
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = MinusStockCommand.class, name = "minusStockCommand"),
-})
+
 public abstract class AbstractStockCommand extends AbstractCommand {
     private List<Integer> menuItems;
 

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <wildcardResourcePatterns>
-      <entry name="!?*.java" />
-      <entry name="!?*.form" />
-      <entry name="!?*.class" />
-      <entry name="!?*.groovy" />
-      <entry name="!?*.scala" />
-      <entry name="!?*.flex" />
-      <entry name="!?*.kt" />
-      <entry name="!?*.clj" />
-    </wildcardResourcePatterns>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -28,12 +18,10 @@
         <module name="stock" />
         <module name="table" />
         <module name="turbine" />
-        <module name="zipkin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apigw" target="1.8" />
-      <module name="bar" target="1.8" />
       <module name="bill" target="1.8" />
       <module name="common" target="1.8" />
       <module name="config" target="1.8" />
@@ -41,13 +29,11 @@
       <module name="eureka" target="1.8" />
       <module name="event" target="1.8" />
       <module name="guest" target="1.8" />
-      <module name="kitchen" target="1.8" />
       <module name="microservices" target="1.8" />
       <module name="order" target="1.8" />
       <module name="stock" target="1.8" />
       <module name="table" target="1.8" />
       <module name="turbine" target="1.8" />
-      <module name="zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

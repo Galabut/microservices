@@ -1,15 +1,6 @@
 package com.ogasimov.labs.springcloud.microservices.common;
 
-import org.codehaus.jackson.annotate.JsonSubTypes;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
 
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
-    property = "type")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = PayBillCommand.class, name = "payBillCommand")
-})
 public class CreateBillCommand extends AbstractBillCommand {
 
     private Integer orderId;
@@ -57,8 +48,8 @@ public class CreateBillCommand extends AbstractBillCommand {
     @Override
     public String toString() {
         return "CreateBillCommand{" +
-               "tableId=" + getTableId() +
-               ", orderId=" + orderId +
-               '}';
+                "tableId=" + getTableId() +
+                ", orderId=" + orderId +
+                '}';
     }
 }

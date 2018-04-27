@@ -1,6 +1,7 @@
 package com.ogasimov.labs.springcloud.microservices.guest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ogasimov.labs.springcloud.microservices.common.AbstractCommand;
 import com.ogasimov.labs.springcloud.microservices.common.CreateOrderCommand;
 import com.ogasimov.labs.springcloud.microservices.common.OccupyTableCommand;
 import com.ogasimov.labs.springcloud.microservices.common.PayBillCommand;
@@ -35,18 +36,23 @@ public class DinnerService {
         //occupy a table
         final Integer tableId = freeTables.get(0);
         ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(new OccupyTableCommand(tableId));
+        AbstractCommand abstractCommand = mapper.readValue(json, AbstractCommand.class);
+        System.out.println("IGMI:"+ json);
+        System.out.println("IGMI:" + abstractCommand);
+
         eventClient.sendEvent(new OccupyTableCommand(tableId));
         tableClient.occupyTable(tableId);
 
         //create the order
-        eventClient.sendEvent(new CreateOrderCommand(tableId, menuItems));
+//        eventClient.sendEvent(new CreateOrderCommand(tableId, menuItems));
         orderClient.createOrder(tableId, menuItems);
 
         return tableId;
     }
 
     public void finishDinner(Integer tableId) throws Exception {
-        eventClient.sendEvent(new PayBillCommand(tableId));
+//        eventClient.sendEvent(new PayBillCommand(tableId));
         billClient.payBills(tableId);
     }
 

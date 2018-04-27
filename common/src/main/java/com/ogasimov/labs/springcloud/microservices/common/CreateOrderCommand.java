@@ -1,9 +1,8 @@
 package com.ogasimov.labs.springcloud.microservices.common;
 
-import org.codehaus.jackson.annotate.JsonSubTypes;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 import java.util.List;
+
 public class CreateOrderCommand extends AbstractOrderCommand {
     private List<Integer> menuItems;
 

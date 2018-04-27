@@ -1,15 +1,5 @@
 package com.ogasimov.labs.springcloud.microservices.common;
 
-import org.codehaus.jackson.annotate.JsonSubTypes;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
-
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.CLASS,
-    include = JsonTypeInfo.As.WRAPPER_OBJECT,
-    property = "class")
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = OccupyTableCommand.class, name = "occupyTableCommand"),
-})
 public abstract class AbstractTableCommand extends AbstractCommand {
 
     private Integer tableId;
@@ -51,7 +41,7 @@ public abstract class AbstractTableCommand extends AbstractCommand {
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + "{" +
-               "tableId=" + tableId +
-               '}';
+                "tableId=" + tableId +
+                '}';
     }
 }
